@@ -1,5 +1,6 @@
 package rp.assignments.individual.ex1;
 
+import rp.robotics.DifferentialDriveRobot;
 import rp.robotics.MobileRobot;
 import rp.systems.StoppableRunnable;
 
@@ -17,7 +18,7 @@ import rp.systems.StoppableRunnable;
  */
 public class TriangleController implements StoppableRunnable {
 
-	public TriangleController(MobileRobot _robot, float _sideLength) {
+	public TriangleController(DifferentialDriveRobot robot, float sideLength) {
 		// TODO Auto-generated method stub
 	}
 

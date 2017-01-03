@@ -1,5 +1,6 @@
 package rp.assignments.individual.ex1;
 
+import lejos.robotics.RangeFinder;
 import lejos.robotics.navigation.Pose;
 import rp.config.WheeledRobotConfiguration;
 import rp.robotics.DifferentialDriveRobot;
@@ -62,8 +63,8 @@ public class IndividualAssignment1Simulation {
 		// This gets the sensor used for range measurement on the simulated
 		// robot. This object implements the RangeFinder method which is also
 		// implemented by range sensors on the real robot.
-		// RangeFinder ranger = sim.getRanger(wrapper);
-
+		RangeFinder ranger = sim.getRanger(wrapper);
+		
 		// By passing this object to the controller it can now measure the
 		// distance to walls.
 		// Note that this will only compile if your controller provides this
