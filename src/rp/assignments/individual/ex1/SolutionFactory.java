@@ -29,7 +29,7 @@ public class SolutionFactory {
 
 	public static StoppableRunnable createEquilateralTriangleController(
 			DifferentialDriveRobot _robot, Float _sideLength) {
-		return null;
+		return new TriangleController(_robot, _sideLength);
 	}
 
 	public static StoppableRunnable createSquareController(
