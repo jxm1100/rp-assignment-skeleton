@@ -33,7 +33,7 @@ public class ViewTest {
 		Ex1Tests tests = new Ex1Tests();
 		// Create the test object plus the controller for the test (via
 		// SolutionFactory)
-		RobotTest<?> test = tests.createTriangleTest();
+		RobotTest<?> test = tests.createPentagonTest();
 		// Create the visualisation of the test, then run everything
 		TestViewer demo = new TestViewer(test, test.getSimulation());
 		demo.run();
@@ -51,7 +51,7 @@ public class ViewTest {
 		Ex1Tests tests = new Ex1Tests();
 		// Create the test object plus the controller for the test (via
 		// SolutionFactory)
-		RobotTest<?> test = tests.createTriangleTest();
+		RobotTest<?> test = tests.createPentagonTest();
 		test.run();
 	}
 
@@ -90,12 +90,12 @@ public class ViewTest {
 		// robot. We pass it the robot object from the simulator.
 		// It is important to note that this controller could also be used with
 		// a real robot provided you have a configuration object to describe it.
-		TriangleController controller = new TriangleController(
+		PentagonController controller = new PentagonController(
 				wrapper.getRobot(), 0.5f);
 
 		// Get the sequence of zones to visit. You could replace this with your
 		// own list of zones.
-		ZoneSequence sequence = Ex1Tests.getTriangleTestSequence();
+		ZoneSequence sequence = Ex1Tests.getPentagonTestSequence();
 
 		// Create a test from these zones, the controller, and the robot to run
 		// it on

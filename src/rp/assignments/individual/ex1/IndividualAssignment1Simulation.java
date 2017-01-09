@@ -51,7 +51,7 @@ public class IndividualAssignment1Simulation {
 		// robot. We pass it the robot object from the simulator.
 		// It is important to note that this controller could also be used with
 		// a real robot provided you have a configuration object to describe it.
-		TriangleController controller = new TriangleController(
+		PentagonController controller = new PentagonController(
 				wrapper.getRobot(), 0.5f);
 
 		// This call attaches theevent listener implemented by the controller

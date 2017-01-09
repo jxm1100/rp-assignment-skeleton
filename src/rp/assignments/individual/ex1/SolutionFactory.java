@@ -27,17 +27,17 @@ import rp.systems.StoppableRunnable;
  */
 public class SolutionFactory {
 
-	public static StoppableRunnable createEquilateralTriangleController(
+	public static StoppableRunnable createPentagonController(
 			DifferentialDriveRobot _robot, Float _sideLength) {
-		return new TriangleController(_robot, _sideLength);
+		return new PentagonController(_robot, _sideLength);
 	}
 
-	public static StoppableRunnable createSquareController(
+	public static StoppableRunnable createOctagonController(
 			DifferentialDriveRobot _robot, Float _sideLength) {
 		return null;
 	}
 
-	public static StoppableRunnable createDecagonController(
+	public static StoppableRunnable createNonagonController(
 			DifferentialDriveRobot _robot, Float _sideLength) {
 		return null;
 	}

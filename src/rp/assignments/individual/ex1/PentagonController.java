@@ -8,7 +8,7 @@ import rp.systems.StoppableRunnable;
  * 
  * A placeholder to show you how you could start writing a controller for the
  * first part of the first individual assignment (creating a controller which
- * drives in a triangle). Note that you don't have to follow this structure for
+ * drives in a pentagon). Note that you don't have to follow this structure for
  * your controller as there are more elegant and efficient (at least in terms of
  * numbers of lines of code) in which you can implement the different shape
  * controllers.
@@ -16,9 +16,9 @@ import rp.systems.StoppableRunnable;
  * @author Nick Hawes
  *
  */
-public class TriangleController implements StoppableRunnable {
+public class PentagonController implements StoppableRunnable {
 
-	public TriangleController(DifferentialDriveRobot robot, float sideLength) {
+	public PentagonController(DifferentialDriveRobot robot, float sideLength) {
 		// TODO Auto-generated method stub
 	}
 
