@@ -1,5 +1,6 @@
 package rp.assignments.individual.ex1;
 
+import lejos.robotics.RangeFinder;
 import lejos.robotics.navigation.Pose;
 import rp.config.WheeledRobotConfiguration;
 import rp.robotics.DifferentialDriveRobot;
@@ -22,7 +23,7 @@ import rp.systems.StoppableRunnable;
  *
  */
 public class ViewTest {
-	
+
 	/**
 	 * Example of how to visualise a test running
 	 * 
@@ -93,10 +94,19 @@ public class ViewTest {
 		// a real robot provided you have a configuration object to describe it.
 		PentagonController controller = new PentagonController(
 				wrapper.getRobot(), 0.5f);
-		
+
 		// Manually create the touch sensor if we need one.
-		if(withTouchSensor == true){
-			sim.addTouchSensorListener(wrapper, (TouchSensorListener) controller);
+		if (withTouchSensor) {
+			sim.addTouchSensorListener(wrapper,
+					(TouchSensorListener) controller);
+		}
+
+		// Get the ranger if you need one
+		if (withRangeSensor) {
+			RangeFinder ranger = sim.getRanger(wrapper);
+			// Pass the range finder into the controller (assuming you have the
+			// right method available)
+			// controller.setRangerFinder(ranger);
 		}
 
 		// Get the sequence of zones to visit. You could replace this with your
