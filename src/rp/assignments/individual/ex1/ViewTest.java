@@ -4,6 +4,7 @@ import lejos.robotics.navigation.Pose;
 import rp.config.WheeledRobotConfiguration;
 import rp.robotics.DifferentialDriveRobot;
 import rp.robotics.MobileRobotWrapper;
+import rp.robotics.TouchSensorListener;
 import rp.robotics.simulation.MapBasedSimulation;
 import rp.robotics.simulation.SimulatedRobots;
 import rp.robotics.testing.RobotTest;
@@ -92,6 +93,11 @@ public class ViewTest {
 		// a real robot provided you have a configuration object to describe it.
 		PentagonController controller = new PentagonController(
 				wrapper.getRobot(), 0.5f);
+		
+		// Manually create the touch sensor if we need one.
+		if(withTouchSensor == true){
+			sim.addTouchSensorListener(wrapper, (TouchSensorListener) controller);
+		}
 
 		// Get the sequence of zones to visit. You could replace this with your
 		// own list of zones.
