@@ -1,35 +1,48 @@
 package rp.assignments.individual.ex1;
 
+import lejos.robotics.navigation.DifferentialPilot;
 import rp.robotics.DifferentialDriveRobot;
 import rp.robotics.MobileRobot;
 import rp.systems.StoppableRunnable;
 
-/**
- * 
- * A placeholder to show you how you could start writing a controller for the
- * first part of the first individual assignment (creating a controller which
- * drives in a pentagon). Note that you don't have to follow this structure for
- * your controller as there are more elegant and efficient (at least in terms of
- * numbers of lines of code) in which you can implement the different shape
- * controllers.
- * 
- * @author Nick Hawes
- *
- */
 public class PentagonController implements StoppableRunnable {
 
+	protected final DifferentialDriveRobot robot;
+	protected final DifferentialPilot pilot;
+	protected float sideLength;
+	protected boolean isRunning = false;
+	
+	protected float rotate;
+	
 	public PentagonController(DifferentialDriveRobot robot, float sideLength) {
-		// TODO Auto-generated method stub
+		this.robot = robot;
+		this.pilot = robot.getDifferentialPilot();
+		this.sideLength = sideLength;
+		this.rotate = 72.0f;
 	}
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		
+		isRunning = true;
+		
+		pilot.setTravelSpeed(pilot.getMaxTravelSpeed());
+		
+		while (isRunning) {
+			pilot.travel(this.sideLength);
+			pilot.rotate(rotate);
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				stop();
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override
 	public void stop() {
-		// TODO Auto-generated method stub
+		isRunning = false;
 	}
 
 }
